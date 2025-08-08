@@ -5,6 +5,9 @@ all: install
 install:
 	go install ${PROJECT}
 
+build-amd64:
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -o ./dist/sshs_amd64 ${PROJECT}
+
 build-armv7:
 	GOOS=linux GOARCH=arm GOARM=7 go build -o ./dist/sshs_armv7 ${PROJECT}
 
